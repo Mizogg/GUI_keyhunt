@@ -30,7 +30,7 @@ pip install PyQt5
 
 Run the program using the following command:
 ```
-python keyhunt_gui.py
+python GUI_keyhunt.py
 ```
 
 Configure the desired search parameters and click the "Start scanning" button to initiate the keyhunt process.
