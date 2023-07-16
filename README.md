@@ -4,7 +4,9 @@ This is a graphical user interface (GUI) for the KeyHunt program , developed by 
 
 KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the secp256k1 elliptic curve.
 
-![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/ea3e2b00-c599-43f1-9065-2d281a8f92d9)
+https://github.com/Mizogg/GUI_keyhunt/assets/88630056/52f3713f-82c0-4f2e-8f4e-937b3672e6c4
+
+## New Version In video available from https://mizogg.co.uk/keyhunt/
 
 ## Features
 Scans for private keys using different modes (address, xpoint, rmd160, bsgs, vanity).
