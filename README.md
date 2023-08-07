@@ -4,7 +4,7 @@ This is a graphical user interface (GUI) for the KeyHunt program , developed by 
 
 KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the secp256k1 elliptic curve.
 
-https://github.com/Mizogg/GUI_keyhunt/assets/88630056/52f3713f-82c0-4f2e-8f4e-937b3672e6c4
+![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/07a7bf84-2d21-4739-9d74-6a249b0704b3)
 
 ## New Version In video available from https://mizogg.co.uk/keyhunt/
 
@@ -19,7 +19,7 @@ Matrix screen option for a hacker-style experience (may affect performance).
 
 # Prerequisites
 Python 3.x
-PyQt5 library
+PyQt6 library
 keyhunt command-line tool (make sure it is installed and accessible via the command line)
 
 # Installation and Usage
@@ -27,7 +27,7 @@ keyhunt command-line tool (make sure it is installed and accessible via the comm
 Clone or download the repository to your local machine.
 Install the required dependencies using the following command:
 ```
-pip install PyQt5
+pip install PyQt6
 ```
 
 Run the program using the following command:
