@@ -6,7 +6,7 @@ KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the se
 
 ![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/07a7bf84-2d21-4739-9d74-6a249b0704b3)
 
-## New Version In video available from https://mizogg.co.uk/keyhunt/
+##Other Versions available from https://mizogg.co.uk/keyhunt/
 
 ## Features
 Scans for private keys using different modes (address, xpoint, rmd160, bsgs, vanity).
