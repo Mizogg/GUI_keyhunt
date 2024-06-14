@@ -33,4 +33,6 @@ This program is licensed under the MIT License. See the LICENSE file for more in
 This GUI is based on the KeyHunt program developed by Alberto albertobsd. For more information about Keyhunt albertobsd@gmail.com &
 https://albertobsd.dev/ . For more information about the GUI KeyHunt tool, visit github.com/Mizogg or mizogg.co.uk
 
+## Help ME.
+Just by visiting my site https://mizogg.co.uk keep up those clicks
 
