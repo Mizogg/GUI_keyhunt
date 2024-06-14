@@ -4,36 +4,18 @@ This is a graphical user interface (GUI) for the KeyHunt program , developed by 
 
 KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the secp256k1 elliptic curve.
 
-![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/07a7bf84-2d21-4739-9d74-6a249b0704b3)
+![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/9a187814-4219-4de8-9c9b-20c2e7ee4b7c)
+
 
 ##Other Versions available from https://mizogg.co.uk/keyhunt/
 
 ## Features
-Scans for private keys using different modes (address, xpoint, rmd160, bsgs, vanity).
+Scans for private keys using different modes (address, bsgs).
 Supports CPU parallelization with adjustable thread count.
 Allows customization of search parameters such as key space, move mode, look, stride, and K value.
-Supports different cryptocurrencies (BTC and ETH).
 Provides an option to enable endomorphism search (only for address, rmd160, and vanity modes).
 Enables vanity address search with a specified prefix.
 Matrix screen option for a hacker-style experience (may affect performance).
-
-# Prerequisites
-Python 3.x
-PyQt6 library
-keyhunt command-line tool (make sure it is installed and accessible via the command line)
-
-# Installation and Usage
-
-Clone or download the repository to your local machine.
-Install the required dependencies using the following command:
-```
-pip install PyQt6
-```
-
-Run the program using the following command:
-```
-python GUI_keyhunt.py
-```
 
 Configure the desired search parameters and click the "Start scanning" button to initiate the keyhunt process.
 
