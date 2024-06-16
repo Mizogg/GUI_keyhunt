@@ -9,6 +9,26 @@ KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the se
 
 ## EASY EXE RUN Get IT FROM  from https://mizogg.co.uk/keyhunt/
 
+# Requirements 
+
+Microsoft Build Tools.
+https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019
+
+Python 3.11
+https://www.python.org/downloads/
+
+```
+PyQt6
+requests
+webbrowser
+```
+# How to Run
+
+```
+python main.py 
+```
+
+
 ## Features
 Scans for private keys using different modes (address, bsgs).
 Supports CPU parallelization with adjustable thread count.
