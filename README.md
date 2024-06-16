@@ -28,6 +28,7 @@ webbrowser
 python main.py 
 ```
 
+![photo_2024-06-16_22-03-25](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/7f4ea6e2-31b4-4e8f-9702-37d1bfdbc09e)
 
 ## Features
 Scans for private keys using different modes (address, bsgs).
