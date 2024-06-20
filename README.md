@@ -11,10 +11,7 @@ KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the se
 
 # Requirements 
 
-Microsoft Build Tools.
-https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019
-
-Python 3.11
+Python 3.11 or 3.12
 https://www.python.org/downloads/
 
 ```
