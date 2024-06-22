@@ -1,5 +1,9 @@
 
-# KeyHunt GUI
+# KeyHunt GUI Version 1.1
+
+![Screenshot 2024-06-22 221803](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/d901187a-41e9-4931-8ee8-c86c9dcdf6a2)
+
+
 This is a graphical user interface (GUI) for the KeyHunt program , developed by albertobsd/keyhunt (https://github.com/albertobsd/keyhunt). 
 
 KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the secp256k1 elliptic curve.
