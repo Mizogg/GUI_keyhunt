@@ -19,7 +19,7 @@ from libs.progress_dialog import ProgressDialog
 ICO_ICON = "images/miz.ico"
 TITLE_ICON = "images/mizogglogo.png"
 RED_ICON = "images/mizogg-eyes.png"
-version = '1.0'
+version = '1.1'
 current_platform = platform.system()
 
 def open_website(self):
@@ -210,8 +210,8 @@ class KeyHuntFrame(QMainWindow):
         keyspaceLayout = QHBoxLayout()
         keyspaceLabel = QLabel("Key Space:")
         keyspaceLayout.addWidget(keyspaceLabel)
-        self.keyspaceLineEdit = QLineEdit("2305843009213693952:73786976294838206463")
-        self.keyspaceLineEdit.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Type in your own DEC Range separated with : </span>')
+        self.keyspaceLineEdit = QLineEdit("2000000000000000:3FFFFFFFFFFFFFFFF")
+        self.keyspaceLineEdit.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Type in your own HEX Range separated with : </span>')
         keyspaceLayout.addWidget(self.keyspaceLineEdit)
         keyspaceMainLayout.addLayout(keyspaceLayout)
         keyspacerange_layout = QHBoxLayout()
@@ -234,9 +234,9 @@ class KeyHuntFrame(QMainWindow):
         return keyspaceGroupBox
 
     def update_keyspace_range(self, value):
-        start_range = (2 ** (value - 1))
-        end_range = (2 ** value - 1)
-        self.keyspaceLineEdit.setText(f"{start_range}:{end_range}")
+        start_range = 2 ** (value - 1)
+        end_range = 2 ** value - 1
+        self.keyspaceLineEdit.setText(f"{start_range:X}:{end_range:X}")
         self.bitsLineEdit.setText(str(value))
 
     def updateSliderAndRanges(self, text):
@@ -247,13 +247,23 @@ class KeyHuntFrame(QMainWindow):
                 bits = max(50, min(bits, 256))
             else:
                 bits = max(1, min(bits, 256))
-            start_range = str(2 ** (bits - 1))
-            end_range = str(2 ** bits - 1)
+            
+            if bits == 256:
+                start_range = "8000000000000000000000000000000000000000000000000000000000000000"
+                end_range = "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364140"
+            else:
+                start_range = 2 ** (bits - 1)
+                end_range = 2 ** bits - 1
+                start_range = f"{start_range:X}"
+                end_range = f"{end_range:X}"
+            
             self.keyspace_slider.setValue(bits)
             self.keyspaceLineEdit.setText(f"{start_range}:{end_range}")
+        
         except ValueError:
-            range_message = "Range should be in Bit 1-256 "
+            range_message = "Range should be in Bit 1-256"
             QMessageBox.information(self, "Range Error", range_message)
+
 
     def create_stop_button(self):
         stopButton = QPushButton("Stop KeyHunt", self)
@@ -481,8 +491,8 @@ class KeyHuntFrame(QMainWindow):
         keyspace = self.keyspaceLineEdit.text().strip()
         if keyspace:
             start_range, end_range = keyspace.split(':')
-            start_range_hex = hex(int(start_range)).replace('0x', '')
-            end_range_hex = hex(int(end_range)).replace('0x', '')
+            start_range_hex = start_range
+            end_range_hex = end_range
             command.extend(["-r", f"{start_range_hex}:{end_range_hex}"])
 
         if not (mode == 'bsgs' and move_mode == 'both'):
