@@ -15,6 +15,7 @@ from libs.console_gui import ConsoleWindow
 from libs.command_thread import CommandThread
 from libs.about_dialog import AboutDialog
 from libs.progress_dialog import ProgressDialog
+from libs.Range_gui import RangeDialog
 
 ICO_ICON = "images/miz.ico"
 TITLE_ICON = "images/mizogglogo.png"
@@ -264,6 +265,9 @@ class KeyHuntFrame(QMainWindow):
             range_message = "Range should be in Bit 1-256"
             QMessageBox.information(self, "Range Error", range_message)
 
+    def range_check(self):
+        self.range_dialog = RangeDialog()
+        self.range_dialog.show()
 
     def create_stop_button(self):
         stopButton = QPushButton("Stop KeyHunt", self)
@@ -320,6 +324,10 @@ class KeyHuntFrame(QMainWindow):
         self.flagQCheckBox = QCheckBox("Quite mode", self)
         self.flagQCheckBox.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Quiet the thread output Only Displays speed </span>')
         outputFileLayout.addWidget(self.flagQCheckBox)
+        self.range_progButton = QPushButton("💾 Range Tools 💾")
+        self.range_progButton.clicked.connect(self.range_check)
+        self.range_progButton.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Ranges ....... </span>')
+        outputFileLayout.addWidget(self.range_progButton)
         return outputFileGroupBox
 
     def update_kComboBox_status(self):
