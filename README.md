@@ -2,7 +2,25 @@
 
 ![photo_2025-05-26_16-27-18](https://github.com/user-attachments/assets/c0ad7c30-d4fc-45fc-8c52-8377645bf7dd)
 
+Advanced Bitcoin and Ethereum Key Hunting Tool with both PyQt6 and Tkinter GUI interfaces.
+
 A powerful GUI application for hunting private keys in the Bitcoin blockchain, featuring multi-instance support, theme customization, and advanced range management tools.
+
+### GUI Versions
+
+#### PyQt6 Version (main.py)
+- Modern Qt-based interface
+- Advanced styling and theming
+- Rich text console output
+- Multi-window support
+
+#### Tkinter Version (tkmain.py)
+- Lightweight native interface
+- Multiple theme options
+- Custom color schemes
+- Cross-platform compatibility
+
+![image](https://github.com/user-attachments/assets/ec1c3a65-ad6b-4544-ab60-8d4cf5576d91)
 
 ## Features
 
@@ -100,15 +118,32 @@ Access theme settings through:
 
 ## Installation
 
-1. Clone the repository
-2. Install required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the application:
-   ```bash
-   python main.py
-   ```
+### Requirements
+```
+Python 3.8 or higher
+PyQt6 (for main.py)
+tkinter (usually comes with Python)
+configparser
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Running the Application
+
+#### PyQt6 Version
+```bash
+python main.py
+```
+
+#### Tkinter Version
+```bash
+python tkmain.py
+```
 
 ## Support
 
