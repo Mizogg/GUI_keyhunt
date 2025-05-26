@@ -1,63 +1,120 @@
+# KeyHunter Puzzles GUI
 
-# KeyHunt GUI Version 1.1
-
-![Screenshot 2024-06-22 221803](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/d901187a-41e9-4931-8ee8-c86c9dcdf6a2)
-
-
-This is a graphical user interface (GUI) for the KeyHunt program , developed by albertobsd/keyhunt (https://github.com/albertobsd/keyhunt). 
-
-KeyHunt is a tool used to hunt private keys for cryptocurrencies that use the secp256k1 elliptic curve.
-
-![image](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/9a187814-4219-4de8-9c9b-20c2e7ee4b7c)
-
-
-## EASY EXE RUN Get IT FROM  from https://mizogg.co.uk/keyhunt/
-
-# Requirements 
-
-Python 3.11 or 3.12
-https://www.python.org/downloads/
-
-```
-PyQt6
-requests
-webbrowser
-```
-# How to Run
-
-```
-python main.py 
-```
-
-![photo_2024-06-16_22-03-25](https://github.com/Mizogg/GUI_keyhunt/assets/88630056/7f4ea6e2-31b4-4e8f-9702-37d1bfdbc09e)
+A powerful GUI application for hunting private keys in the Bitcoin blockchain, featuring multi-instance support, theme customization, and advanced range management tools.
 
 ## Features
-Scans for private keys using different modes (address, bsgs).
-Supports CPU parallelization with adjustable thread count.
-Allows customization of search parameters such as key space, move mode, look, stride, and K value.
-Provides an option to enable endomorphism search (only for address, rmd160, and vanity modes).
-Enables vanity address search with a specified prefix.
-Matrix screen option for a hacker-style experience (may affect performance).
 
-Configure the desired search parameters and click the "Start scanning" button to initiate the keyhunt process.
+### Core Functionality
+- Multiple scanning modes: address, bsgs, and rmd160
+- Support for both BTC and ETH cryptocurrencies
+- Configurable CPU usage per instance
+- Advanced range management and splitting
+- Progress tracking and file management
 
-The program will display the output in the console window.
+### Multi-Instance Support
+- Run multiple instances simultaneously (1, 2, 4, 6, or 8 instances)
+- Automatic CPU distribution across instances
+- Each instance has its own console window for output
+- Shared configuration across all instances
+- Single start/stop control for all instances
 
-Use the provided options to customize the search and control the scanning process.
+### Theme Support
+- Light and dark theme options
+- Theme settings persist between sessions
+- Consistent styling across all components
+- Customizable through the Settings menu
 
-## Contributing
-Contributions to the KeyHunt GUI are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+### Range Management Tools
+- Hexadecimal range calculator
+- Range splitting into equal parts
+- Percentage-based range calculations
+- Visual range slider (1-256 bits)
+- Support for both compressed and uncompressed keys
 
-## License
-This program is licensed under the MIT License. See the LICENSE file for more information.
+### File Management
+- Input file browser
+- Progress file management
+- Automatic key found detection
+- File format validation
 
-## Acknowledgements
-This GUI is based on the KeyHunt program developed by Alberto albertobsd. For more information about Keyhunt albertobsd@gmail.com &
-https://albertobsd.dev/ . For more information about the GUI KeyHunt tool, visit github.com/Mizogg or mizogg.co.uk
+### User Interface
+- Modern, responsive design
+- Clear console output
+- Configurable console threshold
+- Copy and clear console functions
+- Tooltips with helpful information
 
-## Help ME.
-Just by visiting my site https://mizogg.co.uk keep up those clicks
+## Configuration
 
-## Or if you get lucky donations welcome 
-BTC : 3JKyVkRtxDrXEMtZY6Fy53VmvMAT6LKBo8
+### CPU Settings
+- Automatic CPU count detection
+- CPU allocation based on number of instances
+- Example: With 8 CPUs and 8 instances, each instance gets 1 CPU
+- Example: With 8 CPUs and 4 instances, each instance can use up to 2 CPUs
 
+### Range Settings
+- Default range: 400000000000000000:7FFFFFFFFFFFFFFFFF (71 bits)
+- Adjustable through slider or direct input
+- Range splitting for multi-instance operation
+- Support for custom hex ranges
+
+### Mode Settings
+- Address mode: Search for specific addresses
+- BSGS mode: Baby-Step Giant-Step algorithm
+- RMD160 mode: RIPEMD-160 hash search
+- Configurable movement modes (sequential, random, etc.)
+
+## Usage
+
+1. Select the number of instances from the Instances menu
+2. Configure your scanning parameters:
+   - Choose mode (address, bsgs, rmd160)
+   - Select cryptocurrency (BTC/ETH)
+   - Set CPU count per instance
+   - Configure range and other options
+3. Click "Start All Instances" to begin scanning
+4. Monitor progress in individual console windows
+5. Use "Stop All Instances" to halt scanning
+
+## Theme Customization
+
+Access theme settings through:
+1. File menu -> Settings
+2. Choose between light and dark themes
+3. Settings are saved in config.ini
+4. Changes apply immediately
+
+## Requirements
+
+- Python 3.6 or higher
+- PyQt6
+- Windows/Linux operating system
+- Sufficient RAM for selected k-value:
+  - 2 GB RAM: -k 128
+  - 4 GB RAM: -k 256
+  - 8 GB RAM: -k 512
+  - 16 GB RAM: -k 1024
+  - 32 GB RAM: -k 2048
+
+## Installation
+
+1. Clone the repository
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```bash
+   python main.py
+   ```
+
+## Support
+
+For support and updates:
+- Visit: https://mizogg.co.uk
+- Telegram: https://t.me/TeamHunter_GUI
+
+## Credits
+
+Made by Team Mizogg
+© mizogg.com 2018 - 2025
