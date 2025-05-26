@@ -24,22 +24,27 @@ class RangeDialog(QDialog):
     def create_keyspaceGroupBox(self):
         keyspaceGroupBox = QGroupBox(self)
         keyspaceGroupBox.setTitle("Key Space Configuration")
-        keyspaceGroupBox.setStyleSheet("QGroupBox { border: 3px solid #E7481F; padding: 5px; }")
+        keyspaceGroupBox.setStyleSheet("QGroupBox { border: 3px solid; padding: 5px; }")
         keyspaceMainLayout = QVBoxLayout(keyspaceGroupBox)
 
         self.keyspaceLabel = QLabel("Key Space:", self)
         keyspaceMainLayout.addWidget(self.keyspaceLabel)
 
-        self.start_edit = QLineEdit("2000000000000000")
-        self.start_edit.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Type the start range in HEX </span>')
+        self.start_edit = QLineEdit(self)
+        self.start_edit.setPlaceholderText('Start Range')
+        self.start_edit.setToolTip('<span style="font-size: 10pt; font-weight: bold;"> Type the start range in HEX </span>')
+        keyspaceMainLayout.addWidget(self.start_edit)
 
-        self.end_edit = QLineEdit("3FFFFFFFFFFFFFFFF")
-        self.end_edit.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Type the end range in HEX </span>')
+        self.end_edit = QLineEdit(self)
+        self.end_edit.setPlaceholderText('End Range')
+        self.end_edit.setToolTip('<span style="font-size: 10pt; font-weight: bold;"> Type the end range in HEX </span>')
+        keyspaceMainLayout.addWidget(self.end_edit)
+
         self.keyspace_slider = QSlider(Qt.Orientation.Horizontal)
         self.keyspace_slider.setMinimum(1)
         self.keyspace_slider.setMaximum(256)
-        self.keyspace_slider.setValue(66)
-        self.keyspace_slider.setToolTip('<span style="font-size: 10pt; font-weight: bold; color: black;"> Drag Left to Right to Adjust Range </span>')
+        self.keyspace_slider.setValue(71)
+        self.keyspace_slider.setToolTip('<span style="font-size: 10pt; font-weight: bold;"> Drag Left to Right to Adjust Range </span>')
         keyspacerange_layout = QVBoxLayout()
         keyspacerange_layout.addWidget(self.start_edit)
         keyspacerange_layout.addWidget(self.end_edit)
@@ -52,7 +57,7 @@ class RangeDialog(QDialog):
         keyspaceMainLayout.addWidget(self.bitsLabel)
 
         self.bitsLineEdit = QLineEdit(self)
-        self.bitsLineEdit.setText("66")
+        self.bitsLineEdit.setText("71")
         self.bitsLineEdit.textChanged.connect(self.updateSliderAndRanges)
         keyspaceMainLayout.addWidget(self.bitsLineEdit)
 
@@ -65,8 +70,8 @@ class RangeDialog(QDialog):
 
         calculateButton = QPushButton("Calculate", self)
         calculateButton.setStyleSheet(
-            "QPushButton { font-size: 10pt; background-color: #E7481F; color: white; }"
-            "QPushButton:hover { font-size: 10pt; background-color: #A13316; color: white; }"
+            "QPushButton { font-size: 10pt; }"
+            "QPushButton:hover { font-size: 10pt; }"
         )
         calculateButton.clicked.connect(self.calculate_percentage)
         keyspaceMainLayout.addWidget(calculateButton)
@@ -79,7 +84,7 @@ class RangeDialog(QDialog):
     def create_hexRangeGroupBox(self):
         hexRangeGroupBox = QGroupBox(self)
         hexRangeGroupBox.setTitle("Range Division Tools")
-        hexRangeGroupBox.setStyleSheet("QGroupBox { border: 3px solid #E7481F; padding: 5px; }")
+        hexRangeGroupBox.setStyleSheet("QGroupBox { border: 3px solid; padding: 5px; }")
         hexRangeMainLayout = QVBoxLayout(hexRangeGroupBox)
 
         power_label = QLabel("Show")
@@ -97,17 +102,17 @@ class RangeDialog(QDialog):
 
         self.Check_button = QPushButton("Check")
         self.Check_button.setStyleSheet(
-                "QPushButton { font-size: 10pt; background-color: #E7481F; color: white; }"
-                "QPushButton:hover { font-size: 10pt; background-color: #A13316; color: white; }"
-            )
+            "QPushButton { font-size: 10pt; }"
+            "QPushButton:hover { font-size: 10pt; }"
+        )
         self.Check_button.clicked.connect(self.div_range)
         hexRangeMainLayout.addLayout(select_power_layout)
         hexRangeMainLayout.addWidget(self.Check_button)
 
         calculateButton1 = QPushButton("Calculate and Percent", self)
         calculateButton1.setStyleSheet(
-            "QPushButton { font-size: 10pt; background-color: #E7481F; color: white; }"
-            "QPushButton:hover { font-size: 10pt; background-color: #A13316; color: white; }"
+            "QPushButton { font-size: 10pt; }"
+            "QPushButton:hover { font-size: 10pt; }"
         )
         calculateButton1.clicked.connect(self.calculate_percentage_and_div_range)
         hexRangeMainLayout.addWidget(calculateButton1)

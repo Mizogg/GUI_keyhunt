@@ -21,16 +21,16 @@ class ProgressDialog(QDialog):
 
         self.keep_button = QPushButton("Keep", self)
         self.keep_button.setStyleSheet(
-            "QPushButton { font-size: 12pt; background-color: #E7481F; color: white; }"
-            "QPushButton:hover { font-size: 12pt; background-color: #A13316; color: white; }"
+            "QPushButton { font-size: 12pt; }"
+            "QPushButton:hover { font-size: 12pt; }"
         )
         self.keep_button.clicked.connect(self.keep_clicked)
         button_layout.addWidget(self.keep_button)
 
         self.delete_button = QPushButton("Delete", self)
         self.delete_button.setStyleSheet(
-            "QPushButton { font-size: 12pt; background-color: #E7481F; color: white; }"
-            "QPushButton:hover { font-size: 12pt; background-color: #A13316; color: white; }"
+            "QPushButton { font-size: 12pt; }"
+            "QPushButton:hover { font-size: 12pt; }"
         )
         self.delete_button.clicked.connect(self.delete_clicked)
         button_layout.addWidget(self.delete_button)

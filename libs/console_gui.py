@@ -18,22 +18,22 @@ class ConsoleWindow(QWidget):
 
         self.clearButton = QPushButton("Clear", self)
         self.clearButton.setStyleSheet(
-                "QPushButton { font-size: 12pt; background-color: #E7481F; color: white; }"
-                "QPushButton:hover { font-size: 12pt; background-color: #A13316; color: white; }"
+                "QPushButton { font-size: 12pt; }"
+                "QPushButton:hover { font-size: 12pt; }"
             )
         button_layout.addWidget(self.clearButton)
 
         self.selectAllButton = QPushButton("Select All", self)
         self.selectAllButton.setStyleSheet(
-                "QPushButton { font-size: 12pt; background-color: #E7481F; color: white; }"
-                "QPushButton:hover { font-size: 12pt; background-color: #A13316; color: white; }"
+                "QPushButton { font-size: 12pt; }"
+                "QPushButton:hover { font-size: 12pt; }"
             )
         button_layout.addWidget(self.selectAllButton)
 
         self.copyButton = QPushButton("Copy", self)
         self.copyButton.setStyleSheet(
-                "QPushButton { font-size: 12pt; background-color: #E7481F; color: white; }"
-                "QPushButton:hover { font-size: 12pt; background-color: #A13316; color: white; }"
+                "QPushButton { font-size: 12pt; }"
+                "QPushButton:hover { font-size: 12pt; }"
             )
         button_layout.addWidget(self.copyButton)
 

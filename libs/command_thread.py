@@ -15,19 +15,25 @@ class CommandThread(QThread):
         self.process = None
 
     def run(self):
+        # Convert command list to string for display
+        if isinstance(self.command, list):
+            command_str = ' '.join(str(x) for x in self.command)
+        else:
+            command_str = str(self.command)
+            
         # Emit the initial command to indicate starting
-        self.commandOutput.emit(self.command)
+        self.commandOutput.emit(f"Executing command: {command_str}")
 
         try:
             if platform.system() == "Windows":
                 startupinfo = subprocess.STARTUPINFO()
                 startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                 self.process = subprocess.Popen(
-                    self.command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding='utf-8', startupinfo=startupinfo
+                    self.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding='utf-8', startupinfo=startupinfo
                 )
             elif platform.system() == "Linux":
                 self.process = subprocess.Popen(
-                    self.command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding='utf-8'
+                    self.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding='utf-8'
                 )
             else:
                 raise NotImplementedError(f"Unsupported platform: {platform.system()}")
