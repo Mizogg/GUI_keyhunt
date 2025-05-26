@@ -1,5 +1,7 @@
 # KeyHunter Puzzles GUI
 
+![photo_2025-05-26_16-27-18](https://github.com/user-attachments/assets/c0ad7c30-d4fc-45fc-8c52-8377645bf7dd)
+
 A powerful GUI application for hunting private keys in the Bitcoin blockchain, featuring multi-instance support, theme customization, and advanced range management tools.
 
 ## Features
