@@ -113,6 +113,7 @@ Access theme settings through:
 ## Support
 
 For support and updates:
+- Visit: https://mizogg.com
 - Visit: https://mizogg.co.uk
 - Telegram: https://t.me/TeamHunter_GUI
 
