@@ -237,7 +237,7 @@ class GUI(QMainWindow):
             command.extend(["-c", crypto])
             
         look = self.lookComboBox.currentText().strip()
-        if look:
+        if look and crypto != "eth":  # Only add look type if not ETH
             command.extend(["-l", look])
 
         if mode == 'bsgs':
@@ -441,6 +441,7 @@ class GUI(QMainWindow):
         self.cryptoComboBox.addItem("btc")
         self.cryptoComboBox.addItem("eth")
         self.cryptoComboBox.setToolTip('<span style="font-size: 10pt; font-weight: bold;"> Crypto Scanning Type BTC or ETH (default BTC)</span>')
+        self.cryptoComboBox.currentIndexChanged.connect(self.update_look_type_options)
         self.row1Layout.addWidget(self.cryptoComboBox)
 
         self.modeLabel = QLabel("Mode:", self)
@@ -717,6 +718,16 @@ class GUI(QMainWindow):
             self.stop_all_instances()
         except:
             pass
+
+    def update_look_type_options(self):
+        """Update look type options based on selected cryptocurrency"""
+        crypto = self.cryptoComboBox.currentText()
+        if crypto == "eth":
+            self.lookComboBox.setDisabled(True)
+            self.lookComboBox.setStyleSheet("QComboBox { color: gray; }")
+        else:
+            self.lookComboBox.setEnabled(True)
+            self.lookComboBox.setStyleSheet("")
 
 
 if __name__ == "__main__":
