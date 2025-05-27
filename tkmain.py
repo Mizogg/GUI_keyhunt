@@ -736,7 +736,7 @@ class KeyHunterGUI:
         # Create a new top-level window
         settings_window = tk.Toplevel(self.root)
         settings_window.title("Settings")
-        settings_window.geometry("500x400")
+        settings_window.geometry("500x500")
         
         # Create main frame
         main_frame = ttk.Frame(settings_window, padding="10")
